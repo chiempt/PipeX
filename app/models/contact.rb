@@ -25,6 +25,12 @@
 #
 # Indexes
 #
+#  idx_contact_account_id                                (account_id)
+#  idx_contact_blocked                                   (blocked)
+#  idx_contact_company_id                                (company_id)
+#  idx_contact_email                                     (email)
+#  idx_contact_identifier                                (identifier)
+#  idx_contact_phone                                     (phone_number)
 #  index_contacts_on_account_id                          (account_id)
 #  index_contacts_on_account_id_and_contact_type         (account_id,contact_type)
 #  index_contacts_on_account_id_and_last_activity_at     (account_id,last_activity_at DESC NULLS LAST)
