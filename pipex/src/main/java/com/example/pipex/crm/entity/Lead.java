@@ -34,8 +34,6 @@ import com.example.pipex.common.entity.BaseEntity;
 })
 @SQLDelete(sql = "UPDATE leads SET deleted_at = NOW() WHERE id = ?")
 @SQLRestriction("deleted_at IS NULL")
-@Data
-@EqualsAndHashCode(callSuper = true)
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

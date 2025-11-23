@@ -6,12 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import com.example.pipex.common.entity.BaseEntity;
-
 /**
  * LeadTag entity - Many-to-many relationship between Leads and Tags
  * Uses composite key (lead_id, tag_id)
  * No soft delete - just a join table
+ * Does not extend BaseEntity because it uses @IdClass with composite key
  */
 @Entity
 @Table(name = "lead_tags", indexes = {
@@ -24,7 +23,7 @@ import com.example.pipex.common.entity.BaseEntity;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LeadTags extends BaseEntity {
+public class LeadTags {
 
     @Id
     @Column(name = "lead_id", nullable = false)

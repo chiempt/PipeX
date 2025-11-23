@@ -9,13 +9,22 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
 @Configuration
-public class SwaggerConfig {
+public class SwaggerConfig implements WebMvcConfigurer {
 
         private static final String SECURITY_SCHEME_NAME = "ChatwootAuth";
+
+        @Override
+        public void addResourceHandlers(ResourceHandlerRegistry registry) {
+                registry.addResourceHandler("/swagger-ui/**", "/v3/api-docs/**")
+                                .addResourceLocations("classpath:/META-INF/resources/webjars/")
+                                .setCachePeriod(0);
+        }
 
         @Bean
         public OpenAPI customOpenAPI() {
@@ -30,7 +39,7 @@ public class SwaggerConfig {
                                                                                 .description("Chatwoot access token for authentication")))
                                 .info(new Info()
                                                 .title("CRM Service API")
-                                                .version("1.0.0")
+                                                .version("1.0.1")
                                                 .description("API documentation for PipeX")
                                                 .contact(new Contact()
                                                                 .name("PipeX Service")
