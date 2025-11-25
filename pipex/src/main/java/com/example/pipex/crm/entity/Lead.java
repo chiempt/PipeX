@@ -6,8 +6,6 @@ import com.example.pipex.common.entity.Priority;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.SQLDelete;
@@ -38,9 +36,6 @@ import com.example.pipex.common.entity.BaseEntity;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Lead extends BaseEntity {
-
-    @Column(name = "account_id", nullable = false)
-    private Long accountId;
 
     @Column(name = "pipeline_id", nullable = false)
     private Long pipelineId;

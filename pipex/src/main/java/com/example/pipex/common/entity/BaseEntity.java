@@ -27,6 +27,9 @@ public abstract class BaseEntity {
     @Column(name = "updated_at", nullable = false)
     protected OffsetDateTime updatedAt;
 
+    @Column(name = "deleted_at", nullable = true)
+    protected OffsetDateTime deletedAt;
+
     @Column(name = "account_id", nullable = false)
     protected Long accountId;
 
@@ -38,4 +41,5 @@ public abstract class BaseEntity {
 
     @Column(name = "deleted_by_user_id", nullable = true)
     protected Long deletedByUserId;
+
 }
